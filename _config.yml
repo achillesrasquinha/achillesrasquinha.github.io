@@ -1,0 +1,28 @@
+exclude      : [README.md, README.html, node_modules, bower_components]
+
+url          : https://achillesrasquinha.github.io
+title        : Achilles Rasquinha
+description  : Official website of Achilles Rasquinha
+keywords     : [official, achilles, rasquinha, site, blog, projects, about, contact]
+
+color_primary: "#673AB7"
+
+email        : achillesrasquinha@gmail.com
+
+# social links
+social        :
+  facebook  : https://www.facebook.com/rasquinhaachilles
+  googleplus:
+  instagram : https://instagram.com/daft_pankaj
+  linkedin  : https://in.linkedin.com/in/achillesrasquinha
+  github    : https://github.com/achillesrasquinha
+
+gems         :
+  - jekyll-paginate
+
+sass         :
+    style    : compressed
+
+paginate     : 7
+paginate_path: /blog/:num
+

@@ -1,0 +1,74 @@
+[
+      {
+          "name"    : "experience",
+          "position":
+          [
+              {
+                  "company" : "Youth Ki Awaaz",
+                  "title"   : "Journalist",
+                  "location": "New Delhi, India",
+                  "period"  :
+                  {
+                      "begin": "2013-04-01",
+                      "end"  : "2013-05-01"
+                  },
+                  "description": "A 2-month internship with India's largest platform for youth opinions.",
+                  "logo"    : "logo-yka.png"
+              },
+              {
+                  "company" : "Bennett Coleman and Co. Ltd. (Times Group)",
+                  "title"   : "Journalist",
+                  "location": "Mumbai, India",
+                  "period"  :
+                  {
+                      "begin": "2012-04-01",
+                      "end"  : "2012-08-01"
+                  },
+                  "description": "Worked as a Student Journalist for The Times Of India. Primarily focused on real-time journalism, interviewing and corresponding with officials, entrepreneurs and students from India as well as overseas. I served as a key lead in designing and contributing articles to the 17th Anniversary Edition published on a national scale. My views and contributions helped me receive opportunities in publishing my Opinion-Pieces on Page-1.",
+                  "logo"     : "logo-the-times-group.jpg"
+              },
+          ]
+      },
+      {
+          "name"     : "education",
+          "education":
+          [
+              {
+                  "school": "University of Mumbai",
+                  "period":
+                  {
+                      "begin": "2013",
+                      "end"  : "2017"
+                  },
+                  "degree": "Bachelor's Degree",
+                  "field" : "Computer Engineering",
+                  "grade" : "CGPA - 8.45",
+                  "logo"  : "logo-mu.jpg"
+              },
+              {
+                  "school": "St. Xavier's College",
+                  "period":
+                  {
+                      "begin": "2011",
+                      "end"  : "2013"
+                  },
+                  "degree": "Junior College",
+                  "field" : "Science",
+                  "grade" : "HSC - 77 %",
+                  "logo"  : "logo-sxc.jpg"
+              },
+              {
+                  "school": "Holy Family High School",
+                  "period":
+                  {
+                      "begin": "2001",
+                      "end"  : "2011"
+                  },
+                  "degree": "High School",
+                  "field" : null,
+                  "grade" : "SSC - 89.45 %",
+                  "logo"  : "logo-hfhs.jpg"
+              }
+          ] 
+      }
+]

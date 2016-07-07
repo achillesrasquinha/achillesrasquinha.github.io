@@ -1,0 +1,50 @@
+.btn-brand { 
+    color: $color-white; 
+    background-color: $color-accent; 
+    border-color: #C2185B;
+    text-transform: uppercase;
+    font-weight: $button-font-weight;
+    webkit-transition: background-color .35s;
+       -moz-transition: background-color .35s;
+            transition: background-color .35s;
+} 
+ 
+.btn-brand:hover, 
+.btn-brand:focus, 
+.btn-brand:active, 
+.btn-brand.active, 
+.open .dropdown-toggle.btn-brand { 
+    color: $color-white; 
+    background-color: #AD1457; 
+    border-color: #C2185B; 
+} 
+ 
+.btn-brand:active, 
+.btn-brand.active, 
+.open .dropdown-toggle.btn-brand { 
+    background-image: none; 
+} 
+ 
+.btn-brand.disabled, 
+.btn-brand[disabled], 
+fieldset[disabled] .btn-brand, 
+.btn-brand.disabled:hover, 
+.btn-brand[disabled]:hover, 
+fieldset[disabled] .btn-brand:hover, 
+.btn-brand.disabled:focus, 
+.btn-brand[disabled]:focus, 
+fieldset[disabled] .btn-brand:focus, 
+.btn-brand.disabled:active, 
+.btn-brand[disabled]:active, 
+fieldset[disabled] .btn-brand:active, 
+.btn-brand.disabled.active, 
+.btn-brand[disabled].active, 
+fieldset[disabled] .btn-brand.active { 
+    background-color: $color-accent; 
+    border-color: #C2185B; 
+} 
+ 
+.btn-brand .badge { 
+    color: $color-accent; 
+    background-color: $color-white; 
+}

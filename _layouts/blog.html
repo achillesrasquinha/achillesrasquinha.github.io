@@ -1,0 +1,87 @@
+---
+layout: page
+title : Blog
+imgurl: /assets/img/avatar-blog.png
+---
+<div class="row">
+
+  <div class="col-md-9">
+
+    {{ content }}
+
+  </div><!-- end .col-md-9 -->
+
+  <div class="hidden-xs hidden-sm hidden-md col-md-3">
+
+    <!-- search bar -->
+    
+    <form>
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search">
+        <span class="input-group-btn">
+          <button class="btn btn-brand"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+    
+
+    <div class="panel panel-default">
+      <div class="panel-body no-padding">
+
+        <!-- labels -->
+        <div class="panel panel-default no-margin no-border">
+          <div class="panel-heading cursor-pointer" data-toggle="collapse" data-target="#labels">
+            <div class="panel-title">
+              <i class="fa fa-tag fa-fw"></i> <span class="font-bold">Labels</span>
+              <div class="pull-right">
+                <i class="fa fa-chevron-down fa-fw"></i>
+              </div>
+            </div><!-- .panel-title -->
+          </div><!-- .panel-heading -->
+
+          <div class="panel-collapse collapse" id="labels">
+            <div class="panel-body">
+
+            </div>
+          </div><!-- .panel-collapse -->
+
+        </div><!-- .panel -->
+
+        <!-- archives -->
+        <div class="panel panel-default no-margin no-border">
+          <div class="panel-heading cursor-pointer" data-toggle="collapse" data-target="#archives">
+            <div class="panel-title">
+              <i class="fa fa-folder fa-fw"></i> <span class="font-bold">Archives</span>
+              <div class="pull-right">
+                <i class="fa fa-chevron-down fa-fw"></i>
+              </div>
+            </div><!-- .panel-title -->
+          </div><!-- .panel-heading -->
+
+          <div class="panel-collapse collapse" id="archives">
+            <div class="panel-body">
+
+              
+            
+            </div>
+          </div><!-- .panel-collapse -->
+
+        </div><!-- .panel -->
+
+      </div><!-- .panel-body -->
+      <div class="panel-footer no-border">
+        <div class="text-center text-uppercase font-bold">Connect</div>
+        <div class="social">
+          <ul>
+            <li class="facebook"><a href="{{ site.social.facebook }}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a></li>
+            <li class="google-plus"><a href="{{ site.social.googleplus }}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a></li>
+            <li class="instagram"><a href="{{ site.social.instagram }}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a></li>
+            <li class="linkedin"><a href="{{ site.social.linkedin }}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
+            <li class="github"><a href="{{ site.social.github }}" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

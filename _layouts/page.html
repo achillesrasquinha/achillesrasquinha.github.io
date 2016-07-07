@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="jumbotron jumbotron-brand jumbotron-page text-md-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <img class="img-responsive img-circle img-thumbnail" src="{{ site.baseurl }}{% if layout.imgurl %}{{ layout.imgurl }}{% else %}{{ page.imgurl }}{% endif %}" width="150" height="150">
+      </div>
+      <div class="col-md-11">
+        <h2 class="font-bold">
+          {% if layout.title %}
+            {{ layout.title }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  {{ content }}
+</div>

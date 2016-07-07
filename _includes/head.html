@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <!--
+               _     _ _ _                                     _       _ 
+              | |   (_) | |                                   (_)     | |
+     __ _  ___| |__  _| | | ___  ___ _ __ __ _ ___  __ _ _   _ _ _ __ | |__   __ _ 
+    / _` |/ __| '_ \| | | |/ _ \/ __| '__/ _` / __|/ _` | | | | | '_ \| '_ \ / _` |
+   | (_| | (__| | | | | | |  __/\__ \ | | (_| \__ \ (_| | |_| | | | | | | | | (_| |
+    \__,_|\___|_| |_|_|_|_|\___||___/_|  \__,_|___/\__, |\__,_|_|_| |_|_| |_|\__,_|
+                                                      | |
+                                                      |_|
+  -->
+  <head>
+    <meta charset="{{ site.encoding }}">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"              content="width=device-width, initial-scale=1">
+    <meta name="theme-color"           content="{{ site.color_primary }}">
+    <meta name="description"           content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.keywords %}
+      {% assign keywords = page.keywords %}
+    {% else %}
+      {% assign keywords = site.keywords %}
+    {% endif %}
+    <meta name="keywords"    content="{% for i in keywords %}{{ i }} {% endfor %}">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    {% include styles.html %}
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>

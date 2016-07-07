@@ -1,0 +1,73 @@
+$screen-md-width                        : 970px;
+
+$font-bold                              : 700;
+
+$color-white                            : #FFFFFF;
+$color-text                             : #333333;
+$color-primary                          : #673AB7;
+$color-primary-darkest                  : #311B92;
+$color-accent                           : #E91E63;
+$color-accent-dark                      : #C2185B;
+
+$color-facebook                         : #3B5998;
+$color-google-plus                      : #DD4B39;
+$color-instagram                        : #125688;
+$color-linkedin                         : #0077B5;
+$color-github                           : #4183C4;
+
+// body
+// position
+$body-margin-top                        : 50px;
+// typography
+$body-font-family                       : "Open Sans";
+
+// anchor
+$anchor-color                           : $color-accent;
+$anchor-color-hover                     : $color-accent-dark;
+
+// footer
+// visual
+$footer-background-color                : #2B2D2E;
+$footer-color                           : #FFFFFF;
+
+// social
+// position
+$social-padding-x                       :  0px;
+$social-padding-y                       : 18px;
+$social-element-padding                 :  5px;
+$social-link-padding                    : $social-element-padding;
+// typography
+$social-font-size                       : 16px;
+// visual
+$social-link-color                      : #2C3E50;
+$social-link-color-inverse              : $color-white;
+$social-link-border                     : 1px solid;
+
+// copyright
+// position
+$copyright-padding-x                    :  0px;
+$copyright-padding-y                    : 20px;
+// typography
+$copyright-font-size                    : 11px;
+$copyright-letter-spacing               : 0.5;
+// visual
+$copyright-background-color             : #10100E;
+
+// components
+
+// navbar
+// visual
+$navbar-background-color                : $color-white;
+$navbar-background-color-active         : darken($navbar-background-color, 6);
+$navbar-color                           : #2C3E50;
+
+// jumbotron
+// visual
+$jumbotron-background-color             : $color-primary;
+$jumbotron-color                        : $color-white;
+
+// buttons
+// typography
+$button-font-weight                     : $font-bold;
+
+$dropDown       : false;

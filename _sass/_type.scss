@@ -1,0 +1,9 @@
+.font-bold {
+    font-weight                             : $font-bold;
+}
+
+@media (max-width: $screen-md-width) {
+    .text-md-center {
+        text-align                          : center;
+    }
+}

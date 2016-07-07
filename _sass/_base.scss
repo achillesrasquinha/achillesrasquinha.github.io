@@ -1,0 +1,96 @@
+body {
+    // position
+    margin-top                              : $body-margin-top;
+
+    // typography
+    font-family                             : $body-font-family;
+}
+
+footer {
+    background-color                        : $footer-background-color;
+    color                                   : $footer-color;
+    background-image                        : url(/assets/img/texture-noise-200x200.png);
+}
+
+a {
+    color                                   : $anchor-color;
+    text-decoration                         : none;
+    -webkit-transition                      : color .35s;
+       -moz-transition                      : color .35s;
+            transition                      : color .35s;
+
+    &:hover,
+    &:focus {
+        color                               : $anchor-color-hover;
+        text-decoration                     : none;
+    }
+}
+
+.social {
+    // position
+    padding                                 : $social-padding-y $social-padding-x;
+    text-align                              : center;
+    // typography
+    font-size                               : $social-font-size;
+
+    &.social-inverse {
+        > ul li a {
+            color                           : $social-link-color-inverse;
+            border-color                    : $social-link-color-inverse;
+        }
+    }
+
+    > ul {
+        list-style                          : none;
+        margin                              : 0 !important;
+        padding                             : 0 !important;
+
+        > li {
+            display                         : inline;
+            padding                         : $social-element-padding;
+
+
+
+            > a {
+                padding                     : $social-link-padding;
+                color                       : $social-link-color;
+                border                      : $social-link-border;
+                border-color                : $social-link-color;
+                border-radius               : 50%;
+            }
+        }
+
+        > .facebook    a:hover {
+            color                           : $color-facebook;
+        }
+
+        > .google-plus a:hover {
+            color                           : $color-google-plus;
+        }
+        
+        > .instagram   a:hover {
+            color                           : $color-instagram;
+        }
+        
+        > .linkedin    a:hover {
+            color                           : $color-linkedin;
+        }
+        
+        > .github      a:hover {
+            color                           : $color-github;
+        }
+    }
+}
+
+.copyright {
+    // position
+    padding                                 : $copyright-padding-y $copyright-padding-x;
+    // typography
+    font-size                               : $copyright-font-size;
+    letter-spacing                          : $copyright-letter-spacing;
+    text-align                              : center;
+    // visual
+    background-color                        : $copyright-background-color;
+}
+
+

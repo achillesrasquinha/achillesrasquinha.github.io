@@ -3,8 +3,12 @@ layout : page
 title  : About
 imgurl : /assets/img/avatar-about.png
 ---
+<p class="text-md-center">
+  Hi, I'm <span class="font-bold">Achilles Rasquinha</span>.
+</p>
+
 {% for section in site.data.profile %}
-<div class="panel panel-default no-border no-shadow">
+<div class="panel panel-default">
   {% case section.name %}
     {% when 'experience' %}
       {% assign icon = 'suitcase' %}
@@ -16,89 +20,99 @@ imgurl : /assets/img/avatar-about.png
       {% if icon %}<i class="fa fa-fw fa-{{ icon }}"></i> {% endif %}{{ section.name | capitalize }}
     </div>
   </div>
-  <div class="panel-body no-padding">
-    {% case section.name %}
-      {% when 'experience' %}
+  {% case section.name %}
+    {% when 'experience' %}
+      <ul class="list-group">
         {% for position in section.position %}
-          <div class="panel panel-default no-border no-shadow no-margin">
-            <div class="panel-body">
-              {% if position.logo %}
-              <div class="row">
-                <div class="col-xs-9">
+          <li class="list-group-item">
+            {% if position.logo %}
+            <div class="row">
+              <div class="col-xs-9">
+            {% endif %}
+              <p class="font-bold">{{ position.company }}</p>
+              <p class="text-muted"><i class="fa fa-hand-o-right fa-fw"></i> {{ position.title }}</p>
+              {% assign begin = position.period.begin | date: '%B %Y' %}
+              {% if position.period.end %}
+                {% assign end = position.period.end   | date: '%B %Y' %}
               {% endif %}
-                <p class="font-bold">{{ position.company }}</p>
-                <p class="text-muted"><i class="fa fa-hand-o-right fa-fw"></i> {{ position.title }}</p>
-                {% assign begin = position.period.begin | date: '%B %Y' %}
-                {% if position.period.end %}
-                  {% assign end = position.period.end   | date: '%B %Y' %}
-                {% endif %}
-                <p class="text-muted"><i class="fa fa-calendar fa-fw"></i> {{ begin }} - {{ end }}</p>
-                {% if position.location %}
-                <p class="text-muted"><i class="fa fa-map-marker fa-fw"></i> {{ position.location }}</p>
-                {% endif %}
-              {% if position.logo %}
-                </div>
-                <div class="col-xs-3">
-                  <div class="text-right">
-                    <img class="img-thumbnail" src="{{ site.baseurl }}/assets/img/{{ position.logo }}" width="64">
-                  </div>
+              <p class="text-muted"><i class="fa fa-calendar fa-fw"></i> {{ begin }} - {{ end }}</p>
+              {% if position.location %}
+              <p class="text-muted"><i class="fa fa-map-marker fa-fw"></i> {{ position.location }}</p>
+              {% endif %}
+            {% if position.logo %}
+              </div>
+              <div class="col-xs-3">
+                <div class="text-right">
+                  <img class="img-thumbnail" src="{{ site.baseurl }}/assets/img/{{ position.logo }}" width="64">
                 </div>
               </div>
-              {% endif %}
-              {% if position.description %}
-              <p class="text-justify">
-                {{ position.description }}
-              </p>
-              {% endif %}
             </div>
-          </div>
-          {% unless forloop.last %}
-            <hr class="no-margin">
-          {% endunless %}
+            {% endif %}
+            {% if position.description %}
+            <div class="text-justify">
+              {{ position.description }}
+            </div>
+            {% endif %}
+          </li>
         {% endfor %}
-      {% when 'education' %}
+      </ul>
+    {% when 'education' %}
+      <ul class="list-group">
         {% for education in section.education %}
-          <div class="panel-panel-default no-border no-shadow no-margin">
-            <div class="panel-body">
-              {% if education.logo %}
-              <div class="row">
-                <div class="col-xs-9">
-              {% endif %}
-              <p class="font-bold">{{ education.school }}</p>
-              {% if education.degree %}
-                <p class="text-muted">
-                  {{ education.degree }}{% if education.field %}, {{ education.field }}{% endif %}
-                </p>
-              {% endif %}
-              
-              {% if education.period %}
+          <li class="list-group-item">
+            {% if education.logo %}
+            <div class="row">
+              <div class="col-xs-9">
+            {% endif %}
+            <p class="font-bold">{{ education.school }}</p>
+            {% if education.degree %}
               <p class="text-muted">
-                <i class="fa fa-fw fa-calendar"></i> {{ education.period.begin }} - {{ education.period.end }}
+                {{ education.degree }}{% if education.field %}, {{ education.field }}{% endif %}
               </p>
-              {% endif %}
+            {% endif %}
+            
+            {% if education.period %}
+            <p class="text-muted">
+              <i class="fa fa-fw fa-calendar"></i> {{ education.period.begin }} - {{ education.period.end }}
+            </p>
+            {% endif %}
 
-              {% if education.grade %}
-                <p class="text-muted">
-                  <i class="fa fa-fw fa-check"></i> {{ education.grade }}
-                </p>
-              {% endif %}
+            {% if education.grade %}
+              <p class="text-muted">
+                <i class="fa fa-fw fa-check"></i> {{ education.grade }}
+              </p>
+            {% endif %}
 
-              {% if education.logo %}
-                </div>
-                <div class="col-xs-3">
-                  <div class="text-right">
-                    <img class="img-thumbnail" src="{{ site.baseurl }}/assets/img/{{ education.logo }}" width="64">
-                  </div>
+            {% if education.logo %}
+              </div>
+              <div class="col-xs-3">
+                <div class="text-right">
+                  <img class="img-thumbnail" src="{{ site.baseurl }}/assets/img/{{ education.logo }}" width="64">
                 </div>
               </div>
-              {% endif %}
             </div>
-          </div>
-          {% unless forloop.last %}
-            <hr class="no-margin">
-          {% endunless %}
+            {% endif %}
+          </li>
         {% endfor %}
-    {% endcase %}
-  </div>
+      </ul>
+    {% when 'skills' %}
+      <ul class="skills list-group">
+        {% assign skills = section.skills | sort: 'value' | reverse %}
+        {% for skill in skills %}
+          <li class="list-group-item">
+            <div class="progress no-margin">
+              <div class="progress-bar random-dark" aria-valuemin="0" aria-valuemax="100" ariavaluenow="{{ skill.value }}" style="width: {{ skill.value }}%;">
+                {{ skill.name }}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="panel-footer">
+        <div class="text-right">
+          <small>Appealing colors generated using <a href="https://randomcolor.llllll.li" target="_blank">randomColor.js</a></small> 
+        </div>
+      </div>
+  {% endcase %}
 </div>
 {% endfor %}

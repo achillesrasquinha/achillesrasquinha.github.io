@@ -1,37 +1,10 @@
 ---
 layout : blog
-title  : Blog
 imgurl : /assets/img/avatar-blog.png
 ---
 {% for post in paginator.posts %}
 
-  <div class="panel panel-default no-border no-shadow">
-    <div class="panel-heading no-background no-border">
-      <div class="post-title">
-        <a href="{{ post.url }}">
-          <h3>{{ post.title }}</h3>
-        </a>
-      </div>
-      <h4><small>{{ post.date | date: '%B %d, %Y' }}</small></h4>
-    </div>
-    <div class="panel-body text-justify">
-      {{ post.content }}
-    </div>
-
-    <div class="panel-footer no-background">
-      <div class="text-right">
-        <a class="btn btn-sm btn-social-icon btn-twitter" href="http://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ post.url }}">
-          <i class="fa fa-twitter fa-fw"></i>
-        </a>
-        <button class="btn btn-sm btn-social-icon btn-facebook">
-          <i class="fa fa-facebook fa-fw"></i>
-        </button>
-        <button class="btn btn-sm btn-social-icon btn-google">
-          <i class="fa fa-google-plus fa-fw"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+  {% include post.html %}
 
 {% endfor %}
 

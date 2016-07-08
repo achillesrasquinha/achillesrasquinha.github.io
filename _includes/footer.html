@@ -1,4 +1,6 @@
     <footer>
+
+      <!-- #contact -->
       <div id="contact" class="container">
         <div class="page-header text-center">
           <h4 class="text-uppercase font-bold">Contact</h4>
@@ -74,14 +76,26 @@
             <li class="github"><a href="{{ site.social.github }}" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
           </ul>
         </div>
-      </div>
-      <div class="container-fluid no-margin no-padding">
+      </div><!-- end #contact -->
+
+      <!-- copyright -->
+      <div class="container-fluid no-padding">
         <div class="copyright">
-          &copy; {{ site.time | date: '%Y' }} {{ site.title }}
+          <div>
+            &copy; {{ site.time | date: '%Y' }} {{ site.title }}
+          </div>
+          <div>
+            Built with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <a href="https://getbootstrap.com" target="_blank">Bootstrap</a>
+          </div>
         </div>
       </div>
+      <!-- end copyright -->
+
     </footer>
 
+    <!-- scripts -->
     {% include scripts.html %}
+    <!-- end scripts -->
+
   </body>
 </html>

@@ -70,5 +70,27 @@
                   "logo"  : "logo-hfhs.jpg"
               }
           ] 
+      },
+      {
+          "name"  : "skills",
+          "skills":
+          [
+              {
+                  "name": "HTML5 / CSS3 / JavaScript",
+                  "value": "93"
+              },
+              {
+                  "name": "Android",
+                  "value": "85"
+              },
+              {
+                  "name": "Python",
+                  "value": "88"
+              },
+              {
+                  "name": "C++ / STL / BoostC++",
+                  "value": "95"
+              }
+          ]
       }
 ]

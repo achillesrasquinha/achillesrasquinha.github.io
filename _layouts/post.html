@@ -1,33 +1,8 @@
 ---
 layout: blog
 ---
-<div class="panel panel-default no-border no-shadow">
-  <div class="panel-heading no-background no-border">
-    <div class="post-title">
-      <h3>{{ page.title }}</h3>
-    </div>
-    <h4><small>{{ page.date | date: '%B %d, %Y' }}</small></h4>
-  </div>
-  <div class="panel-body text-justify">
-    {{ page.content }}
-  </div>
-
-  <div class="panel-footer no-background">
-    <div class="text-right">
-      <a class="btn btn-sm btn-social-icon btn-twitter" href="http://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}">
-        <i class="fa fa-twitter fa-fw"></i>
-      </a>
-      <button class="btn btn-sm btn-social-icon btn-facebook">
-        <i class="fa fa-facebook fa-fw"></i>
-      </button>
-      <button class="btn btn-sm btn-social-icon btn-google">
-        <i class="fa fa-google-plus fa-fw"></i>
-      </button>
-    </div>
-  </div>
-</div>
-<div class="panel panel-default no-border no-shadow">
-  <div class="panel-body text-center">
+{% include post.html %}
+  <div class="text-center">
     <div class="btn-group">
 
       {% if page.previous.url %}
@@ -52,5 +27,4 @@ layout: blog
 
     </div>
   </div>
-</div>
 {% include comments.html %}

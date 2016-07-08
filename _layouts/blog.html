@@ -11,11 +11,10 @@ imgurl: /assets/img/avatar-blog.png
 
   </div><!-- end .col-md-9 -->
 
-  <div class="hidden-xs hidden-sm hidden-md col-md-3">
+  <div class="visible-lg col-md-3">
 
     <!-- search bar -->
     
-    <form>
     <div class="form-group">
       <div class="input-group">
         <input class="form-control" type="text" placeholder="Search">
@@ -26,51 +25,97 @@ imgurl: /assets/img/avatar-blog.png
     </div>
     
 
-    <div class="panel panel-default">
-      <div class="panel-body no-padding">
+    <ul class="list-group">
 
-        <!-- labels -->
-        <div class="panel panel-default no-margin no-border">
-          <div class="panel-heading cursor-pointer" data-toggle="collapse" data-target="#labels">
+      <li class="list-group-item no-padding">
+
+        <div class="panel panel-default no-border no-shadow no-margin">
+          <div class="panel-heading cursor-pointer panel-toggle" data-toggle="collapse" data-target="#labels">
             <div class="panel-title">
-              <i class="fa fa-tag fa-fw"></i> <span class="font-bold">Labels</span>
+              <i class="fa fa-tags fa-fw"></i> <span class="font-bold">Labels</span>
               <div class="pull-right">
-                <i class="fa fa-chevron-down fa-fw"></i>
+                <i class="fa fa-chevron fa-chevron-down fa-fw"></i>
               </div>
             </div><!-- .panel-title -->
           </div><!-- .panel-heading -->
 
           <div class="panel-collapse collapse" id="labels">
             <div class="panel-body">
-
+              {% for tag in site.tags %}
+                {% assign name = tag | first %}
+                <a href="{{ site.baseurl }}/blog/labels/{{ name }}">
+                  <div class="label random-dark"><i class="fa fa-tag fa-fw"></i> {{ name }}</div>
+                </a>
+              {% endfor %}
             </div>
           </div><!-- .panel-collapse -->
 
         </div><!-- .panel -->
 
+      </li>
+
+      <li class="list-group-item no-padding">
+
         <!-- archives -->
-        <div class="panel panel-default no-margin no-border">
-          <div class="panel-heading cursor-pointer" data-toggle="collapse" data-target="#archives">
+        <div class="panel panel-default no-border no-shadow no-margin">
+          <div class="panel-heading cursor-pointer panel-toggle" data-toggle="collapse" data-target="#archives">
             <div class="panel-title">
               <i class="fa fa-folder fa-fw"></i> <span class="font-bold">Archives</span>
               <div class="pull-right">
-                <i class="fa fa-chevron-down fa-fw"></i>
+                <i class="fa fa-chevron fa-chevron-down fa-fw"></i>
               </div>
             </div><!-- .panel-title -->
           </div><!-- .panel-heading -->
 
           <div class="panel-collapse collapse" id="archives">
-            <div class="panel-body">
-
-              
             
-            </div>
+            <ul class="list-group">
+
+              {% for post in site.posts %}
+                {% capture year %}{{post.date | date: "%Y"}}{% endcapture %}
+                {% if year != pyear %}
+                  {% unless forloop.first %}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  {% endunless %}
+                  <li class="list-group-item no-padding">
+                    <div class="panel panel-default no-border no-shadow no-margin">
+                      <div class="panel-heading cursor-pointer panel-toggle no-background" data-toggle="collapse" data-target="#archive-{{ year }}">
+                        <span class="color-primary">{{ year }}</span>
+                        <div class="pull-right">
+                          <i class="fa fa-chevron fa-chevron-down fa-fw"></i>
+                        </div>
+                      </div>
+                      <div class="panel-collapse collapse" id="archive-{{ year }}">
+                        <ul class="list-group">
+                  {% capture pyear %}{{year}}{% endcapture %} 
+                {% endif %}
+                <li class="list-group-item">
+                  <div class="post-title">
+                    <a href="{{ post.url }}">
+                      {{ post.title }}
+                    </a>
+                  </div>
+                </li>
+                {% if forloop.last %}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                {% endif %}
+              {% endfor %}
+
+            </ul>
+
           </div><!-- .panel-collapse -->
 
         </div><!-- .panel -->
 
-      </div><!-- .panel-body -->
-      <div class="panel-footer no-border">
+      </li>
+
+      <li class="list-group-item">
         <div class="text-center text-uppercase font-bold">Connect</div>
         <div class="social">
           <ul>
@@ -81,7 +126,8 @@ imgurl: /assets/img/avatar-blog.png
             <li class="github"><a href="{{ site.social.github }}" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
           </ul>
         </div>
-      </div>
-    </div>
+      </li>
+
+    </ul>
   </div>
 </div>

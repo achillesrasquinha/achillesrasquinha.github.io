@@ -1,3 +1,6 @@
+---
+---
+
 $(document).ready(function ($) {
   smoothScroll.init({
       speed    : 1000,
@@ -17,6 +20,26 @@ $(document).ready(function ($) {
       $(this).find('.fa-chevron').toggleClass('fa-chevron-up fa-chevron-down');
   });
 
+  $('.jekyll-search').each(function ( ) {
+      var target     = $(this).data('target');
+      var $container = $(target);
+
+      $container.addClass('sr-only')
+      $container.append('<div class="panel panel-default"><div class="panel-body"><ul class="list-unstyled no-margin"/></div></div>');
+      
+      var resultCont = $container.find('ul')[0];
+
+      SimpleJekyllSearch({
+        searchInput     : $(this)[0],
+        resultsContainer: resultCont,
+        json            : '{{ site.baseurl }}/assets/data/search.json'
+      });
+
+      $(this).on('input', function (e) {
+          $(this).val() ? $container.removeClass('sr-only') : $container.addClass('sr-only');
+      });
+  });  
+
   $('.rrssb-buttons').each(function ( ) {
     var url  = $(this).data('url');
     var text = $(this).data('text');
@@ -27,4 +50,5 @@ $(document).ready(function ($) {
     });
   });
 
+  $('.loader-brand').fadeOut(500);
 });

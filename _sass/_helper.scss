@@ -26,6 +26,12 @@
     color                                   : $color-primary;
 }
 
+.addon-accent {
+    color                                   : $color-white;
+    background-color                        : $color-accent;
+    border-color                            : #C2185B;
+}
+
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;

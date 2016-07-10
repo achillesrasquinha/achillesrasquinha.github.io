@@ -100,8 +100,8 @@ imgurl : /assets/img/avatar-about.png
         {% assign skills = section.skills | sort: 'value' | reverse %}
         {% for skill in skills %}
           <li class="list-group-item">
-            <div class="progress no-margin">
-              <div class="progress-bar random-dark" aria-valuemin="0" aria-valuemax="100" ariavaluenow="{{ skill.value }}" style="width: {{ skill.value }}%;">
+            <div class="progress no-margin no-shadow">
+              <div class="progress-bar no-shadow random-dark" aria-valuemin="0" aria-valuemax="100" ariavaluenow="{{ skill.value }}" style="width: {{ skill.value }}%;">
                 {{ skill.name }}
               </div>
             </div>

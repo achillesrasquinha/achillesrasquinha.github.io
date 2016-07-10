@@ -23,6 +23,8 @@
     {% endif %}
     <meta name="keywords"    content="{% for i in keywords %}{{ i }} {% endfor %}">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{% if layout.title %}{{ layout.title }} | {% endif %}{{ site.title }}</title>
-    {% include styles.html %}
+    
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    {% include styles.html %}
   </head>
